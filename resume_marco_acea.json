@@ -55,18 +55,18 @@
         ]
     }],
     "projects" : [{
-        "name" : "Parthean Notifications Slack Bot",
-        "startDate" : "2020-05",
-        "endDate" : "2020-06",
+        "name" : "ArgoCD AppSource Controller",
+        "startDate" : "2021-05",
+        "endDate" : "",
         "highlights" : [
-            "Notifies Slack workspace about new threads/replies from students on Parthean (similar to Piazza)",
-            "Reacts to original thread notifications, e.g ✅ for unresolved posts and 👀 for posts being responded to",
-            "Scrapes website every minute using Selenium and Cron jobs, creates JSON models for the scraped information, and uses the Slack API to send messages"
+            "Kubernetes Custom Resource Definitions that gives under-privelaged users permission from admins to create ArgoCD applications automatically",
+            "Supports multiple ArgoCD Project \"profiles\" that limit what actions sub-users can make with their application.",
+            "Currently going through adoption proccess for the argo-proj-labs collection of vetted community projects"
         ],
         "keywords" : [
-            "Python",
-            "Selenium",
-            "Slack API"
+            "Golang",
+            "Kubernetes",
+            "ArgoCD"
         ]}],
     "work" : [
         {
@@ -75,8 +75,8 @@
             "startDate" : "2020-05",
             "endDate" : "",
             "highlights" : [
-                "Developed new feature for the ArgoCD project that allows non-admin users to create Applications and Projects for themselves within a Kubernetes cluster.",
-                "Built a Kubernetes custom resource and controller that utilizes admin configurations using regular expressions and the Kubernetes Role Base Access Control system to service non-admin activity."
+                "Developed new feature for the ArgoCD project that allows non-admin users to safely create Applications and Projects for themselves within a Kubernetes cluster.",
+                "Built a Kubernetes custom resource definition that combines Kubernetes' Role Based Access Control System with custom admin defined Project Specifications to manage ArgoCD configurations for non-admin users."
             ]
         },
         {
