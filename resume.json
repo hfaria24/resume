@@ -4,6 +4,10 @@
         "email" : "aceamarco@gmail.com",
         "phone" : "(786) 470-9891",
         "website" : "aceamarco.dev",
+        "location" : {
+            "city" : "Pittsburgh",
+            "region" : "Pennsylvania"
+        },
         "profiles" : [{
             "network" : "LinkedIn",
             "username" : "marco-acea",
