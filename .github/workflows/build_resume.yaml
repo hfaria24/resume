@@ -33,4 +33,4 @@ jobs:
         run: npm install jsonresume-theme-macchiato-ibic
 
       - name: Make resumes
-        run: make all
+        run: make build
