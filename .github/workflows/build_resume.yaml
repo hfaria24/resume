@@ -39,8 +39,8 @@ jobs:
         uses: test-room-7/action-update-file@v1
         with:
           file-path: |
-            html/*
-            pdf/*
+            html/resume_marco_acea.html
+            pdf/resume_marco_acea.pdf
             index.html
           commit-msg: Update resources
           github-token: ${{ secrets.GITHUB_TOKEN }}
