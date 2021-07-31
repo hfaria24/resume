@@ -34,3 +34,13 @@ jobs:
 
       - name: Make resumes
         run: make build
+
+      - name: Update resources
+        uses: test-room-7/action-update-file@v1
+        with:
+          file-path: |
+            html/*
+            pdf/*
+            index.html
+          commit-msg: Update resources
+          github-token: ${{ secrets.GITHUB_TOKEN }}
