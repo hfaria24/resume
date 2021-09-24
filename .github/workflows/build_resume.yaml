@@ -30,7 +30,7 @@ jobs:
         run: npm install -g resume-cli
 
       - name: Install themes
-        run: npm install jsonresume-theme-macchiato-ibic
+        run: npm install jsonresume-theme-caffine
 
       - name: Make resumes
         run: make build
