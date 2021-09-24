@@ -1,12 +1,13 @@
 RESUME = $(shell which resume)
+NODE = $(shell which node)
 
 all: resume-pdf resume-html
 
 resume-pdf:
-	$(RESUME) export pdf/resume_marco_acea.pdf -t jsonresume-theme-macchiato-ibic
+	$(NODE) node_modules/resume-cli export --theme=jsonresume-theme-macchiato-ibic pdf/resume_marco_acea.pdf
 
 resume-html:
-	$(RESUME) export html/resume_marco_acea.html -t jsonresume-theme-macchiato-ibic
+	$(NODE) node_modules/resume-cli export --theme=jsonresume-theme-macchiato-ibic html/resume_marco_acea.html
 
 build: resume-pdf resume-html
 	cp html/resume_marco_acea.html index.html
