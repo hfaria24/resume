@@ -27,11 +27,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install json-resume cli
-        run: npm install -g resume-cli
-
-      - name: Install themes
-        run: npm i jsonresume-theme-macchiato-ibic
+      - name: Initialize npm environment locally
+        run: make npm-init
 
       - name: Make resumes
         run: make build
