@@ -5,6 +5,7 @@ on:
       - master
     paths:
       - 'resume.json'
+      - .github/workflows/build_resume.yaml
 
 jobs:
   build:
@@ -30,7 +31,7 @@ jobs:
         run: npm install -g resume-cli
 
       - name: Install themes
-        run: npm -g i jsonresume-theme-macchiato-ibic
+        run: npm i jsonresume-theme-macchiato-ibic
 
       - name: Make resumes
         run: make build
