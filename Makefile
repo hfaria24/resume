@@ -3,7 +3,7 @@ NODE = $(shell which node)
 
 all: resume-pdf resume-html
 
-npm:
+npm-init:
 	$(NPM) init
 	$(NPM) install resume-cli jsonresume-theme-macchiato-ibic
 
