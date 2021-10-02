@@ -44,7 +44,7 @@
         "name" : "Software/Frameworks",
         "keywords" : [
             "Selenium",
-            "Slack API",
+            "Django",
             "Kubernetes",
             "Google Firestore",
             "Argo CD"
