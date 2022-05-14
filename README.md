@@ -17,3 +17,4 @@ My [`resume.json`](resume.json) file is where all the data for my resume is held
 # How do I get this for myself?
 
 Fork my repo and you're all set! Make changes to the `resume.json` file in your forked repo and your pdf/html files will be updated to your resume.
+
