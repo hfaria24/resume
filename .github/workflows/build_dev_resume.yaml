@@ -2,10 +2,10 @@ name: Building New Experimental Resume
 on:
   push:
     branches:
-      - master
+      - dev
     paths:
       - 'resume.json'
-      - '.github/workflows/build_resume.yaml'
+      - '.github/workflows/build_dev_resume.yaml'
 
 jobs:
   build:
@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: 'dev'
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -37,7 +39,7 @@ jobs:
           file-path: |
             resume.pdf
             index.html
-            package-lock.json
           commit-msg: Update resources
           allow-removing: true
+          branch: dev
           github-token: ${{ secrets.GITHUB_TOKEN }}
