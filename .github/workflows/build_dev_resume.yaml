@@ -39,7 +39,6 @@ jobs:
           file-path: |
             resume.pdf
             index.html
-            package-lock.json
           commit-msg: Update resources
           allow-removing: true
           branch: dev
