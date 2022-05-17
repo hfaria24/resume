@@ -1,22 +1,23 @@
-name: Build Pipeline
+name: Building New Resume
 on:
   push:
     branches:
       - master
     paths:
       - 'resume.json'
-      - '.github/workflows/build_resume.yaml'
-      - 'Makefile'
+      # - '.github/workflows/build_resume.yaml'
+      # - 'Makefile'
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Cache node modules
-        uses: actions/cache@v2
+        id: cache-npm
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
@@ -28,11 +29,27 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Initialize npm environment locally
-        run: make npm-init
+      - if: ${{ steps.cache-npm.outputs.cache-hit == false }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list
 
-      - name: Make resumes
-        run: make build
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install -g resume-cli
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: npm install
+
+      - name: Build
+        run: npm build
+
+      - name: Test
+        run: npm test
+      
+      - name: Build resume
+        run:  make resume
 
       - name: Update resources
         uses: test-room-7/action-update-file@v1
@@ -41,5 +58,6 @@ jobs:
             html/resume_marco_acea.html
             pdf/resume_marco_acea.pdf
             index.html
+            package-lock.json
           commit-msg: Update resources
           github-token: ${{ secrets.GITHUB_TOKEN }}
