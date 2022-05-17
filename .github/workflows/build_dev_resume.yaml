@@ -66,6 +66,7 @@ jobs:
       #   run: npm ci --ignore-scripts
 
       - name: Build recent resumes
+        continue-on-error: true
         run: |
           resume export --theme=jsonresume-theme-macchiato-ibic resume.pdf
           resume export --theme=jsonresume-theme-macchiato-ibic resume.html
@@ -78,7 +79,6 @@ jobs:
         uses: test-room-7/action-update-file@v1
         with:
           file-path: |
-            resume.html
             resume.pdf
             index.html
             package-lock.json
