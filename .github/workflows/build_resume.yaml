@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - dev
     paths:
       - 'resume.json'
       # - '.github/workflows/build_resume.yaml'
@@ -55,8 +56,8 @@ jobs:
         uses: test-room-7/action-update-file@v1
         with:
           file-path: |
-            html/resume_marco_acea.html
-            pdf/resume_marco_acea.pdf
+            resume.html
+            resume.pdf
             index.html
             package-lock.json
           commit-msg: Update resources
