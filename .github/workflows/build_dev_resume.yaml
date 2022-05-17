@@ -37,7 +37,7 @@ jobs:
       #       ${{ runner.os }}-
 
       - name: Install dependencies if package-lock file was not found
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm i -g resume-cli
           npm i jsonresume-theme-macchiato-ibic
