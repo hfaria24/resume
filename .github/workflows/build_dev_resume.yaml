@@ -2,7 +2,6 @@ name: Building New Resume
 on:
   push:
     branches:
-      - master
       - dev
     paths:
       - 'resume.json'
@@ -14,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: 'dev'
 
       - name: Cache node modules
         id: cache-npm
