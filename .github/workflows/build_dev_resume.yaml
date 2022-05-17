@@ -84,4 +84,5 @@ jobs:
             package-lock.json
           commit-msg: Update resources
           allow-removing: true
+          branch: dev
           github-token: ${{ secrets.GITHUB_TOKEN }}
