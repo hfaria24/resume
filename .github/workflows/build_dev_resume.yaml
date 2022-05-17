@@ -46,13 +46,10 @@ jobs:
 
       - name: Install dependencies if cache found
         if: steps.cache.outputs.cache-hit == 'true'
-        run: npm install
-
-      - name: Build
-        run: npm build
-
-      - name: Test
-        run: npm test
+        run: |
+        npm install
+        npm build
+        npm test
       
       - name: Build resume
         run:  make resume
