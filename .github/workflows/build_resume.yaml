@@ -1,12 +1,12 @@
-name: Building New Resume
+name: Building New Experimental Resume
 on:
   push:
     branches:
       - master
-      - dev
     paths:
       - 'resume.json'
       - '.github/workflows/build_resume.yaml'
+      - 'Makefile'
 
 jobs:
   build:
@@ -15,51 +15,30 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          node-version: '14'
 
-      - if: ${{ steps.cache-npm.outputs.cache-hit == false }}
-        name: List the state of node modules
-        continue-on-error: true
-        run: npm list
-
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Install dependencies if package-lock file was not found
         run: |
-          chmod +x "install.sh"
-          install.sh
+          npm i -g resume-cli
+          npm i jsonresume-theme-macchiato-ibic
 
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit == 'true'
-        run: npm install
-
-      - name: Build
-        run: npm build
-
-      - name: Test
-        run: npm test
-      
-      - name: Build resume
-        run:  make resume
+      - name: Build recent resumes
+        continue-on-error: true
+        run: |
+          resume export --theme=jsonresume-theme-macchiato-ibic resume.pdf
+          resume export --theme=jsonresume-theme-macchiato-ibic resume.html
+          mv resume.html index.html
 
       - name: Update resources
         uses: test-room-7/action-update-file@v1
         with:
           file-path: |
-            resume.html
             resume.pdf
             index.html
             package-lock.json
           commit-msg: Update resources
+          allow-removing: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
