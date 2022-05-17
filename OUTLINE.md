@@ -26,7 +26,7 @@ rendering can be viewed at aceamarco.dev
 
 This will (should) always be the most recent rendering of my public resume.
 
-## resume.html
+## index.html
 
 This will (should) always be the most recent html rendering and source code for my resume on aceamarco.dev of my public resume.
 
