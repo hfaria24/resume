@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jsonresume-theme-macchiato-ibic": "^1.0.5",
+    "resume-cli": "^3.0.7"
+  }
+}
