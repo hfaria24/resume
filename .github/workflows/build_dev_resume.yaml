@@ -1,4 +1,4 @@
-name: Building New Resume
+name: Building New Experimental Resume
 on:
   push:
     branches:
@@ -38,6 +38,7 @@ jobs:
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
+          pwd
           chmod +x "install.sh"
           install.sh
 
