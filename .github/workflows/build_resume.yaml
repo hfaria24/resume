@@ -37,7 +37,9 @@ jobs:
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: /install.sh
+        run: |
+          chmod +x "install.sh"
+          install.sh
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit == 'true'
