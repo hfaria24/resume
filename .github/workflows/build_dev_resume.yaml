@@ -39,6 +39,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           pwd
+          ls -a
           chmod +x "install.sh"
           install.sh
 
