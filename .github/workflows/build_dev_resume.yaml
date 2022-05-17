@@ -41,17 +41,16 @@ jobs:
         continue-on-error: true
         run: npm list
 
-      - name: Install Dependencies if cache not found
-        if: steps.cache.outputs.cache-hit != 'true'
-        continue-on-error: false
-        run: |
-          pwd
-          ls -a
-          chmod +x "./install.sh"
-          ./install.sh
+      # - name: Install Dependencies if cache not found
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      #   continue-on-error: false
+      #   run: |
+      #     pwd
+      #     ls -a
+      #     chmod +x "./install.sh"
+      #     ./install.sh
 
-      - name: Install dependencies if cache found
-        if: steps.cache.outputs.cache-hit == 'true'
+      - name: Install dependencies
         run: |
           npm install
           npm build
