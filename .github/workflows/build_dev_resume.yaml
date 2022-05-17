@@ -58,9 +58,15 @@ jobs:
 
       - name: Install dependencies
         run: npm ci --ignore-scripts
+
+      - name: Build recent resumes
+        run: |
+          resume export --theme=jsonresume-theme-macchiato-ibic resume.pdf
+          resume export --theme=jsonresume-theme-macchiato-ibic resume.html
+          mv resume.html index.html
       
-      - name: Build resume
-        run:  make resume
+      # - name: Build resume
+      #   run:  make resume
 
       - name: Update resources
         uses: test-room-7/action-update-file@v1
