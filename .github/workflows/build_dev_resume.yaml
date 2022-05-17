@@ -40,8 +40,8 @@ jobs:
         run: |
           pwd
           ls -a
-          chmod +x "install.sh"
-          install.sh
+          chmod +x "./install.sh"
+          ./install.sh
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit == 'true'
