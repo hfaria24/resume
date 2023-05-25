@@ -11,39 +11,52 @@
         }]
     },
     "education" : [{
-        "institution" : "Carnegie Mellon University",
-        "area" : "Electrical and Computer Engineering",
+        "institution" : "Cornell University",
+        "area" : "Computer of Sciecnce",
         "studyType" : "Bachelor's of Science",
-        "startDate" : "2018-08",
-        "endDate" : "2022-12",
+        "startDate" : "2022-08",
+        "endDate" : "",
         "courses" : [
-            "Structure and Design of Digital Systems",
-            "Web App Development",
-            "Principles of Imperative Computing",
-            "Logic Design and Verification",
-            "Intro to Embedded Systems",
-            "Fundamentals of Embedded Control"
+            "Intro to Computer Science using Python",
+            "Calculus for Engineers",
+            "Engineering General Chemistry"
+            ]
+        },
+        {
+        "institution" : "Miami Dade College",
+        "area" : "Arts and Science",
+        "studyType" : "Bachelor's of Arts",
+        "startDate" : "2019-08",
+        "endDate" : "2021-05",
+        "courses" : [
+            "Pre-Calculus",
+            "Calculus 1",
+            "General Physics",
+            "Physics 2"
         ]
-    }],
+        }
+    ],
+    "awards": [{
+        "title": "Valedictorian",
+        "date": "2021-06-01",
+        "awarder": "Mater Academy Charter High",
+        "summary": "An award given by graduating top of the class constisting of over 400 students."
+      }],
     "skills": [
         {
         "name" : "Programming Languages",
         "keywords" : [
             "Python",
-            "Golang",
-            "C",
-            "HTML/JS/CSS",
-            "System Verilog"
+            "Java",
+            "JavaScript"
             ]
         },
         {
         "name" : "Software/Frameworks",
         "keywords" : [
-            "Selenium",
-            "Django",
-            "Kubernetes",
-            "Google Firestore",
-            "Argo CD"
+            "web2py",
+            "Bootstrap",
+            "Full Stack"
         ]
     }],
     "projects" : [{
