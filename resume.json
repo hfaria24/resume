@@ -60,18 +60,40 @@
         ]
     }],
     "projects" : [{
-        "name" : "ArgoCD AppSource Controller",
-        "startDate" : "2021-05",
-        "endDate" : "",
+        "name" : "Motion Controlled Remote Speaker",
+        "startDate" : "2020-06",
+        "endDate" : "2020-08",
         "highlights" : [
-            "Kubernetes Custom Resource Definitions that gives under-privelaged users permission from admins to create ArgoCD applications automatically",
-            "Supports multiple ArgoCD Project \"profiles\" that limit what actions sub-users can make with their application.",
-            "Currently going through adoption proccess for the argo-proj-labs collection of vetted community projects"
+            "Designed and developed a glove that can detect motion through acceleration detectors, as well as gyroscopes to determine orientation.",
+            "Modified a Bose speaker by externally connecting its controls to a receiver.",
+            "Developed a program that interprets information sent by the glove and converts it to commands that is sent to the receiver to control the speaker in less than a second."
         ],
         "keywords" : [
-            "Golang",
-            "Kubernetes",
-            "ArgoCD"
-        ]}]
+            "Python",
+            "Bootstrap",
+            "Engineering"
+        ]
+        },
+        {
+        "name" : "Idle Clicker Game",
+        "startDate" : "2019-06",
+        "endDate" : "2019-08",
+        "highlights" : [
+            "Developed a simple game that allows users to click images of fruit in order to obtain currency.",
+            "Currency could then be used to buy upgrades that would automate currency acquisition.",
+            "The backend of the project required multiple counters and calls to functions from other files."
+        ]
+        }
+    ],
+    "work": [{
+        "name": "MIT Summer Program",
+        "position": "Student",
+        "startDate": "2020-06",
+        "endDate": "2020-08",
+        "summary": "Studied online at MIT, learning about Electrical Engineering Systems and Embedded Systems as well as Engineering Journalism",
+        "highlights": [
+          "Worked on several small projects, as well as the Motion Controlled Remote Speaker"
+        ]
+      }]
 }
 
